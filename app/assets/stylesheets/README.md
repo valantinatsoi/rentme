@@ -79,7 +79,7 @@ For every folder (**`components`**, **`pages`**), there is one `_index.scss` par
 
 ```scss
 // pages/_index.scss
-@import "home";
+@import "profile";
 @import "contact";
 ```
 
