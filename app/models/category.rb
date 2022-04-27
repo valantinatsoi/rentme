@@ -1,6 +1,6 @@
 class Category < ApplicationRecord
   has_many :listings
-  validates :type, inclusion: {
-    in: %w[Personal Professional]
+  validates :name, inclusion: {
+    in: %w[personal professional]
   }
 end
