@@ -8,7 +8,6 @@ module.exports = {
       },
       stage: 3
     }),
-    require('tailwindcss')('./app/javascript/stylesheets/tailwind.config.js'),
     require('autoprefixer')
   ]
 }
