@@ -1,0 +1,75 @@
+<%# INSERT NAVBAR (copy and Paste from Val page) %>
+
+
+<!-- NAVBAR COMPONENT -->
+    <nav class="flex items-center justify-between flex-wrap bg-pink-600 p-4 rounded">
+      <div class="flex items-center flex-shrink-0 text-white mr-6">
+        <span class="font-bold text-xl">RentMe</span>
+      </div>
+
+      <div class="w-full block flex-grow sm:flex sm:items-center sm:w-auto">
+        <div class="text-sm sm:flex-grow">
+          <%# <a
+            href="#"
+            class="block mt-4 sm:inline-block sm:mt-0 text-teal-200 hover:text-white mr-4"
+          >
+            Personal
+          </a>
+          <a
+            href="#"
+            class="block mt-4 sm:inline-block sm:mt-0 text-teal-200 hover:text-white"
+          >
+            Professional
+          </a> %>
+              <% @categories.each do |category| %>
+              <p><%= link_to category.name.capitalize, category_path(category), class: "block mt-4 sm:inline-block sm:mt-0 text-teal-200 hover:text-white" %></p>
+              <% end %>
+        </div>
+        <div>
+          <%# <a
+            href="#"
+            class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-blue-500 hover:bg-white mt-4 md:mt-0"
+            >Login</a
+          > %>
+          <p><%= link_to "Sign Up", new_user_registration_path, class: "inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-blue-500 hover:bg-white mt-4 md:mt-0" %></p>
+        </div>
+        <div>
+          <p><%= link_to "Login", new_user_session_path, class: "inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-blue-500 hover:bg-white mt-4 md:mt-0" %></p>
+        </div>
+      </div>
+    </nav>
+<!-- END OF NAVBAR -->
+
+
+
+<%# Card for Listings %>
+<div class=“bg-purple-600”>
+    <h3 class=“mb-0 text-center font-extrabold text-white text-5xl”> @category.name Listings </h3>
+    <ul>
+    </ul>
+    <div class=“container mt-5 mx-auto px-2”>
+      <!-- Flex on med screens and up -->
+      <div class=“md:flex”>
+        <div
+          class=“flex-1 text-gray-700 text-center bg-black px-5 py-5 m-2 rounded”
+        >
+          <div class=“lg:flex lg:items-center”>
+            <div class=“lg:flex-shrink-0”>
+              <img class=“rounded-lg lg:w-64" src=“https://images.unsplash.com/photo-1558538449-1e5c89b6dd2e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Z29sZGVuJTIwcmV0cmVpdmVyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=700&q=60” alt=“” />
+            </div>
+            <div class=“mt-4 lg:mt-0 lg:ml-6”>
+             <a
+                href=“#”
+                class=“block mt-1 text-lg leading-tight font-semibold text-pink-600 hover:underline”
+                > “Name: Atlas” </a
+              >
+              <div
+                class=“uppercase tracking-wide text-sm text-white  ”
+              >“Life motto: Live, Laugh, Love Belly Rubs  ”
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
