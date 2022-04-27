@@ -10,7 +10,7 @@
 
       <div class="w-full block flex-grow sm:flex sm:items-center sm:w-auto">
         <div class="text-sm sm:flex-grow">
-          <a
+          <%# <a
             href="#"
             class="block mt-4 sm:inline-block sm:mt-0 text-teal-200 hover:text-white mr-4"
           >
@@ -21,7 +21,10 @@
             class="block mt-4 sm:inline-block sm:mt-0 text-teal-200 hover:text-white"
           >
             Professional
-          </a>
+          </a> %>
+              <% @categories.each do |category| %>
+              <p><%= link_to category.name.capitalize, category_path(category), class: "block mt-4 sm:inline-block sm:mt-0 text-teal-200 hover:text-white" %></p>
+              <% end %>
         </div>
         <div>
           <a
