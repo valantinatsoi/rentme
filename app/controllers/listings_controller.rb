@@ -10,7 +10,7 @@ class ListingsController < ApplicationController
 
   # GET /listings/new
   def new
-    @category = Category.find(params[:user_id])
+    # @category = Category.find(params[:user_id])
     @listing = Listing.new
   end
 
@@ -54,5 +54,4 @@ class ListingsController < ApplicationController
     def listing_params
       params.require(:listing).permit(:user_id, :category_id, :fee, :slogan, :description)
     end
-  end
 end
