@@ -1,31 +1,65 @@
-<h2>Sign up</h2>
+<!-- NAVBAR COMPONENT -->
+    <nav class="flex items-center justify-between flex-wrap bg-pink-600 p-2 rounded">
+      <div class="flex items-center flex-shrink-3 text-white mr-6">
+        <span class="font-bold text-xl">RentMe</span>
+      </div>
+        <div class="flex-col justify-end">
+          <div class="w-full block flex-grow sm:flex sm:items-center sm:w-auto">
+            <div class="hidden sm:flex items-center justify-between space-x-2">
+              <div>
+                <p class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-pink-600
+                hover:bg-white mt-4 md:mt-1"><%= link_to "Sign Up", new_user_registration_path %>
+                </p>
+              </div>
+              <div>
+                <p class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-pink-600
+                hover:bg-white mt-4 md:mt-1"><%= link_to "Login", new_user_session_path %>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+    </nav>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
+<!-- END OF NAVBAR -->
+<div class="container sm:mx-auto sm:my-auto md:justify-center bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 py-50 px-50 rounded-lg shadow-lg">
+  <h1 class="text-bold text-lg text-center py-10 justify-items-center">Sign up
+  </h1>
 
-  <div class="form-inputs">
-    <%= f.input :first_name,
-                input_html: { autocomplete: "First Name" }%>
-    <%= f.input :last_name,
-                input_html: { autocomplete: "Last Name" }%>
-    <%= f.input :avatar,
-                input_html: { autocomplete: "Avatar" }%>
-    <%= f.input :email,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "Email" }%>
-    <%= f.input :password,
-                required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "New-password" } %>
-    <%= f.input :password_confirmation,
-                required: true,
-                input_html: { autocomplete: "New-password" } %>
+    <div class="text-center">
+      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= f.error_notification %>
+
+        <div class="form-inputs">
+          <%= f.input :first_name,
+                      input_html: { autocomplete: "First Name" }%>
+          <%= f.input :last_name,
+                      input_html: { autocomplete: "Last Name" }%>
+          <%= f.input :avatar,
+                      input_html: { autocomplete: "Avatar" }%>
+          <%= f.input :email,
+                      required: true,
+                      autofocus: true,
+                      input_html: { autocomplete: "Email" }%>
+          <%= f.input :password,
+                      required: true,
+                      hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                      input_html: { autocomplete: "New-password" } %>
+          <%= f.input :password_confirmation,
+                      required: true,
+                      input_html: { autocomplete: "New-password" } %>
+        </div>
+
+    <div class="form-actions">
+       <p class="inline-block text-sm px-4 py-2 leading-none border rounded text-black border-pink-600 hover:border-transparent hover:text-pink-600
+       hover:bg-white mt-4 md:mt-1"><%= f.button :submit, "Sign up" %>
+       </p>
+    </div>
+    <% end %>
+
+  <div>
+       <p class="inline-block text-sm px-4 py-2 leading-none border rounded text-black border-pink-600 hover:border-transparent hover:text-pink-600
+       hover:bg-white mt-4 md:mt-1"><%= render "devise/shared/links" %>
+       </p>
   </div>
-
-  <div class="form-actions">
-     <%= f.button :submit, "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>
