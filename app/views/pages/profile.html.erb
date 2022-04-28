@@ -8,25 +8,34 @@
 </div>
 <br>
 
-<div class="font-bold text-5xl m-5 text-center">Welcome <%= current_user.first_name %> </div>
 
 
-  <div class="flex items-center justify-center">
+
+<%# -------------Welcome User, photo and info------------- %>
+<div>
+
+  <div class="font-bold text-5xl m-5 text-center">Welcome <%= current_user.first_name %> </div>
+
+
    <%#  ----------------image is an oblong ---------------- %>
     <%# <img class="rounded-full items-center mb-3" src="https://images.unsplash.com/photo-1558538449-1e5c89b6dd2e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Z29sZGVuJTIwcmV0cmVpdmVyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=700&q=60" alt="Sunset in the mountains"> %>
 
     <%#  ----------------image is squeezed  ----------------%>
-    <img class="h-80 w-80 rounded-full items-center mb-3" src="<%= current_user.avatar %>" alt="user profile picture">
+  <div class="flex items-center justify-center">
+    <img class="object-fill h-80 w-80 rounded-full items-center mb-3" src="<%= current_user.avatar %>" alt="user profile picture">
+  </div>
 
-      <div class="max-w-cover px-5 pt-2 mb-5 rounded-lg overflow-hidden shadow-lg bg-gray-200/20 items-center border-2 border-pink-600">
-        <div class="font-bold text-xl mb-5 "><%= current_user.first_name %> <%= current_user.last_name %></div>
-        <div class="font-normal text-md mb-5 "><%= current_user.email %></div>
+  <div class="items-center px-6">
+
+      <div class="max-w-cover px-5 pt-2 mb-5 rounded-lg overflow-hidden shadow-lg bg-gray-200/20  border-2 border-pink-600">
+        <div class="font-bold text-xl text-justify mb-5 "><%= current_user.first_name %> <%= current_user.last_name %></div>
+        <div class="font-normal text-md text-justify mb-5 "><%= current_user.email %></div>
       </div>
 
 
     <%# <div class="flex space-x-3 -mx-5 px-5"> %>
     <div class="flex flex-wrap -mx-5 px-5">
-      <div class="w-full sm:w-full md:w-full lg:w-full xl:w-1/2 px-5 mb-5 rounded-lg overflow-hidden shadow-lg bg-gray-200/20 items-center border-2 border-pink-600">
+      <div class="w-full sm:w-full md:w-full lg:w-1/2 xl:w-1/2 px-5 mb-5 rounded-lg overflow-hidden shadow-lg bg-gray-200/20 items-center border-2 border-pink-600">
         <div>My Bookings</div>
         <br>
         <br>
@@ -34,7 +43,7 @@
       </div>
 
 
-      <div class="w-full sm:w-full md:w-full lg:w-full xl:w-1/2 px-5 mb-5 rounded-lg overflow-hidden shadow-lg bg-gray-200/20 items-center border-2 border-pink-600">
+      <div class="w-full sm:w-full md:w-full lg:w-1/2 xl:w-1/2 px-5 mb-5 rounded-lg overflow-hidden shadow-lg bg-gray-200/20 items-center border-2 border-pink-600">
         <div>My Listings</div>
           <div>
             <p><%= link_to "Add a listing", new_listing_path, class: "inline-block text-sm px-4 py-2 leading-none border rounded  text-white bg-pink-600 hover:border-transparent hover:text-pink-600 hover:bg-white mt-4 md:mt-0"%></p>
@@ -44,4 +53,6 @@
         <br>
       </div>
     </div>
+
+  </div>
 </div>
