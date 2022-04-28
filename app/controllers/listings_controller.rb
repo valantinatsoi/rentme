@@ -10,15 +10,16 @@ class ListingsController < ApplicationController
 
   # GET /listings/new
   def new
-    # @category = Category.find(params[:user_id])
+    @category = Category.find(params[:category_id])
     @listing = Listing.new
   end
 
   # POST /listings
   def create
-    @category = Category.find(params[:user_id])
+    @category = Category.find(params[:category_id])
     @listing = Listing.new(listing_params)
-    @category.listing = @listing
+    @listing.category = @category
+    @listing.user = current_user
 
     if @listing.save
       redirect_to profile_path, notice: 'Listing was successfully created.'
@@ -43,6 +44,7 @@ class ListingsController < ApplicationController
 
   # DELETE /Listings/1
   def destroy
+    @listing = Listing.find(params[:id])
     @listing.destroy
     redirect_to listings_url, notice: 'Listing was successfully destroyed.'
   end
