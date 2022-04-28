@@ -1,6 +1,6 @@
 class ListingsController < ApplicationController
   def index
-    @listings = Listing.all
+    @listings = Listing.where(user_id: params[:user_id])
   end
 
   # GET /listings/1
