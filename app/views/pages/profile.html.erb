@@ -1,31 +1,49 @@
 <h1>This is the user profile page</h1>
 <p> Welcome <%= current_user %></p>
+PUT NAVBAR
 <br>
 <br>
 <%= link_to "Back to homepage", root_path %>
 
+<div class="font-bold text-5xl m-5 text-center">Welcome "user first name" </div>
 
-<div class="container mt-5 mx-auto px-2">
 
-  <div class="md:flex">
-        <div class="flex-1 text-gray-700 text-center bg-black px-5 py-5 m-2 rounded">
-          <div class="lg:flex lg:items-center">
-            <div class="lg:flex-shrink-0">
-              <img class="rounded-lg lg:w-64" src="https://images.unsplash.com/photo-1558538449-1e5c89b6dd2e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Z29sZGVuJTIwcmV0cmVpdmVyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=700&q=60" alt="" />
-            </div>
-            <div class="mt-4 lg:mt-0 lg:ml-6">
-              <a href="#"
-                class="uppercase tracking-wide text-sm text-pink-700 font-semibold hover:underline"
-              > Name: Atlas
-              </a>
-              <div
-                class="block mt-1 text-lg leading-tight font-semibold text-white"
-                >Life motto: Live, Laugh, Love Belly Rubs</div
-              >
-            </div>
-          </div>
-        </div>
+  <div class="flex items-center justify-center">
+   <%#  ----------------image is an oblong ---------------- %>
+    <%# <img class="rounded-full items-center mb-3" src="https://images.unsplash.com/photo-1558538449-1e5c89b6dd2e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Z29sZGVuJTIwcmV0cmVpdmVyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=700&q=60" alt="Sunset in the mountains"> %>
+
+    <%#  ----------------image is squeezed  ----------------%>
+    <img class="h-80 w-80 rounded-full items-center mb-3" src="https://images.unsplash.com/photo-1558538449-1e5c89b6dd2e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Z29sZGVuJTIwcmV0cmVpdmVyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=700&q=60" alt="Sunset in the mountains">
 
   </div>
 
+
+
+
+      <div class="max-w-cover px-5 pt-2 mb-5 rounded-lg overflow-hidden shadow-lg bg-gray-200/20 items-center border-2 border-pink-600">
+        <div class="font-bold text-xl mb-5 ">"User Full name"</div>
+        <div class="font-normal text-md mb-5 ">"Email"</div>
+        <div class="font-normal text-md mb-5 ">"Phone number but like this 6635****"</div>
+      </div>
+
+
+
+
+    <%# <div class="flex space-x-3 -mx-5 px-5"> %>
+    <div class="flex flex-wrap -mx-5 px-5">
+      <div class="w-full sm:w-full md:w-full lg:w-full xl:w-1/2 px-5 mb-5 rounded-lg overflow-hidden shadow-lg bg-gray-200/20 items-center border-2 border-pink-600">
+        <div>My Bookings</div>
+        <br>
+        <br>
+        <br>
+      </div>
+
+
+      <div class="w-full sm:w-full md:w-full lg:w-full xl:w-1/2 px-5 mb-5 rounded-lg overflow-hidden shadow-lg bg-gray-200/20 items-center border-2 border-pink-600">
+        <div>My Listings</div>
+        <br>
+        <br>
+        <br>
+      </div>
+    </div>
 </div>
