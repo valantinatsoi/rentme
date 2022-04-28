@@ -22,44 +22,53 @@
     </nav>
 
 <!-- END OF NAVBAR -->
-<div class="container sm:mx-auto sm:my-auto md:justify-center bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 py-50 px-50 rounded-lg shadow-lg">
-  <h1 class="text-bold text-lg text-center py-10 justify-items-center">Sign up
-  </h1>
-
-    <div class="text-center">
-      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<h1 class="text-bold text-cyan-900 text-2xl text-center py-10 justify-items-center">Sign up</h1>
+<div class="mt-6 flex justify-center">
+  <div class="w-1/2 xl:w-1/2"
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= f.error_notification %>
-
-        <div class="form-inputs">
-          <%= f.input :first_name,
-                      input_html: { autocomplete: "First Name" }%>
-          <%= f.input :last_name,
-                      input_html: { autocomplete: "Last Name" }%>
-          <%= f.input :avatar,
-                      input_html: { autocomplete: "Avatar" }%>
-          <%= f.input :email,
-                      required: true,
-                      autofocus: true,
-                      input_html: { autocomplete: "Email" }%>
-          <%= f.input :password,
+          <span class="text-cyan-900 text-bold">First Name</span>
+          <%= f.input :first_name, label: false,
+                      input_html: { autocomplete: "First Name", class: "mt-1 mb-4 block w-full rounded-md bg-gray-100
+                      border-transparent focus:border-gray-500 focus:bg-white
+                      focus:ring-0" }%>
+          <span class="text-cyan-900 text-bold">Last Name</span>
+          <%= f.input :last_name, label: false,
+                      input_html: { autocomplete: "Last Name", class: "mt-1 mb-4 block w-full rounded-md bg-gray-100
+                      border-transparent focus:border-gray-500 focus:bg-white
+                      focus:ring-0" }%>
+          <span class="text-cyan-900 text-bold">Avatar (image url)</span>
+          <%= f.input :avatar, label: false,
+                      input_html: { autocomplete: "Avatar", class: "mt-1 mb-4 block w-full rounded-md bg-gray-100
+                      border-transparent focus:border-gray-500 focus:bg-white
+                      focus:ring-0" }%>
+          <span class="text-cyan-900 text-bold">Email</span>
+          <%= f.input :email, label: false,
+                      input_html: { autocomplete: "Email", class: "mt-1 mb-4 block w-full rounded-md bg-gray-100
+                      border-transparent focus:border-gray-500 focus:bg-white
+                      focus:ring-0" }%>
+          <span class="text-cyan-900 text-bold">Password</span>
+          <%= f.input :password, label: false,
                       required: true,
                       hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                      input_html: { autocomplete: "New-password" } %>
-          <%= f.input :password_confirmation,
+                      input_html: { autocomplete: "New-password", class: "mt-1 mb-4 block w-full rounded-md bg-gray-100
+                      border-transparent focus:border-gray-500 focus:bg-white
+                      focus:ring-0" } %>
+          <span class="text-cyan-900 text-bold">Confirm Password</span>
+          <%= f.input :password_confirmation, label: false,
                       required: true,
-                      input_html: { autocomplete: "New-password" } %>
-        </div>
+                      input_html: { autocomplete: "New-password", class: "mt-1 mb-4 block w-full rounded-md bg-gray-100
+                      border-transparent focus:border-gray-500 focus:bg-white
+                      focus:ring-0" } %>
 
-    <div class="form-actions">
-       <p class="inline-block text-sm px-4 py-2 leading-none border rounded text-black border-pink-600 hover:border-transparent hover:text-pink-600
-       hover:bg-white mt-4 md:mt-1"><%= f.button :submit, "Sign up" %>
-       </p>
-    </div>
-    <% end %>
-
-  <div>
-       <p class="inline-block text-sm px-4 py-2 leading-none border rounded text-black border-pink-600 hover:border-transparent hover:text-pink-600
-       hover:bg-white mt-4 md:mt-1"><%= render "devise/shared/links" %>
-       </p>
+      <div class="mt-4 justify-center"
+          <div class="form-actions">
+              <p class="inline-block text-lg mt:mb2 px-6 py-4 shadow-2xl leading-none border rounded text-pink-600 border-pink-600 hover:text-white hover:bg-pink-600 mt-4 md:mt-0" >
+                <%= f.button :submit, "Sign up" %></p>
+              <p class="inline-block text-lg mb-4 px-6 py-4 shadow-2xl leading-none border rounded text-pink-600 border-pink-600 hover:text-white hover:bg-pink-600 mt-4 md:mt-0" >
+                <%= render "devise/shared/links" %>
+              </p>
+          <div>
+        <% end %>
+      </div>
   </div>
-</div>
