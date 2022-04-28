@@ -51,7 +51,11 @@
                     <div class="mt-4 lg:mt-0 lg:ml-6">
                       <p class="uppercase tracking-wide text-sm text-purple-600 font-bold">You have booked <%= booking.listing.user.first_name %> for a <%= (booking.listing.category.name).capitalize %> Listing </p>
                       <p class="block mt-1 text-lg leading-tight font-semibold text-gray-900">Amount: <%= booking.listing.fee %> </p>
+                      <p class="block mt-1 text-lg leading-tight font-semibold text-gray-900">Your booking requirements: <%= booking.requirements %> </p>
                       <p class="block mt-1 text-lg leading-tight font-semibold text-gray-900">Confirmed: <%= booking.status ? "Yes" : "No" %> </p>
+                    </div>
+                    <div>
+                      <p><%= link_to "Edit", edit_booking_path(booking), class: "inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-blue-500 hover:bg-white mt-4 md:mt-0" %></p>
                     </div>
                   </div>
                 </div>
