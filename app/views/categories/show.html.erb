@@ -16,9 +16,14 @@
       </div>
     </nav>
 
+<%# Name of category %>
+<h1><%= (@category.name).capitalize %> Listings</h1>
+
+<%# Link to add a new listing %>
 <div>
-  <p><%= link_to "Add a listing", new_listing_path, class: "inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-blue-500 hover:bg-white mt-4 md:mt-0" %></p>
+  <p><%= link_to "Add a listing", new_listing_path, class: "inline-block text-sm px-4 py-2 leading-none border rounded text-white bg-pink-600 hover:border-transparent hover:text-pink-600 hover:bg-white mt-4 md:mt-0" %></p>
 </div>
+
 <!-- END OF NAVBAR -->
 <%# Card for Listings %>
 <div class=“bg-purple-600”>
