@@ -24,7 +24,7 @@ class BookingsController < ApplicationController
 
   def update
     if @booking.update(booking_params)
-      redirect_to @booking, notice: "Booking was succesfully updated"
+      redirect_to profile_path, notice: "Booking was succesfully updated"
     else
       render :edit
     end
