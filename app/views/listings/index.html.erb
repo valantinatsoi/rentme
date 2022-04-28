@@ -1,0 +1,23 @@
+<div class="flex-1 text-gray-700 text-center shadow-2xl bg-white border-pink-600 border-2 px-5 py-5 m-2 rounded">
+<div class="container mt-4">
+  <div class="lg:flex lg:items-center">
+    <div class="lg:flex-shrink-0">
+      <img class="rounded-lg lg:w-64 shadow-2xl" src="<%= @listing.user.avatar %>"/>
+
+        <div class="mt-5 lg:mt-1 lg:ml-6">
+          <p class="uppercase tracking-wide text-lg text-cyan-900 font-bold">Hi, my name is <%= @listing.user.first_name%></p>
+        </div>
+        <div class="mt-5 lg:mt-1 lg:ml-6">
+          <p class="uppercase tracking-wide text-lg text-cyan-900  font-semi-bold"><%= @listing.slogan %></p>
+        </div>
+        <div>
+          <p class="block mt-4 text-lg leading-relaxed font-normal font-sans text-gray-900"><%= @listing.description %></p>
+        </div>
+        <div>
+          <p class="block mt-4 text-lg leading-relaxed font-normal text-gray-900"> Fee: ¥ <%= @listing.fee %>0 </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
