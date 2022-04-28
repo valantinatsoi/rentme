@@ -1,0 +1,16 @@
+<div class="container py-5">
+  <div class="row">
+    <div class="col-12 col-md-6 offset-lg-3">
+      <div class="bg-white rounded p-3 shadow">
+        <h3>Add a new listing for </h3>
+        <%= simple_form_for @listing do |f| %>
+          <%= f.input :category, collection: %w[personal professional] %>
+          <%= f.input :slogan, placeholder: 'Your slogan' %>
+          <%= f.input :description, placeholder: 'Description of what you\'re offering' %>
+          <%= f.input :fee, placeholder: '500rmb' %>
+          <%= f.submit class: 'btn btn-flat' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

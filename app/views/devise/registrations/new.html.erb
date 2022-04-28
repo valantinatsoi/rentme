@@ -50,9 +50,9 @@
                       input_html: { autocomplete: "New-password" } %>
         </div>
 
-    <div>
+    <div class="form-actions">
        <p class="inline-block text-sm px-4 py-2 leading-none border rounded text-black border-pink-600 hover:border-transparent hover:text-pink-600
-       hover:bg-white mt-4 md:mt-1"><%= link_to "Sign Up", profile_path %>
+       hover:bg-white mt-4 md:mt-1"><%= f.button :submit, "Sign up" %>
        </p>
     </div>
     <% end %>
@@ -61,7 +61,5 @@
        <p class="inline-block text-sm px-4 py-2 leading-none border rounded text-black border-pink-600 hover:border-transparent hover:text-pink-600
        hover:bg-white mt-4 md:mt-1"><%= render "devise/shared/links" %>
        </p>
-  </div>
-
   </div>
 </div>

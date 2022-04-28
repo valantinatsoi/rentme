@@ -10,7 +10,7 @@ class ListingsController < ApplicationController
 
   # GET /listings/new
   def new
-    @category = Category.find(params[:user_id])
+    # @category = Category.find(params[:user_id])
     @listing = Listing.new
   end
 
