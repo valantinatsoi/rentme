@@ -3,16 +3,7 @@
   <div class="lg:flex lg:items-center">
     <div class="lg:flex-shrink-0">
       <img class="rounded-lg lg:w-64 shadow-2xl" src="<%= @listing.user.avatar %>"/>
-    </div>
-      <div class="p-5">
-        <div>
-          <p class="inline-block text-lg px-6 py-4 shadow-2xl leading-none border rounded text-pink-600 border-pink-600 hover:text-white hover:bg-pink-600 mt-4 md:mt-0" >
-            <%= link_to "Edit", edit_listing_path(@listing) %>
-          </p>
-        </div>
-        <div>
-          <p class="inline-block text-lg px-6 py-4 shadow-2xl leading-none border rounded text-pink-600 border-pink-600 hover:text-white hover:bg-pink-600 mt-4 md:mt-0"><%= link_to "Delete", listing_path(@listing), method: :delete, data: { confirm: "Are you sure you want to delete this listing?"}, class: 'text-danger' %></p>
-        </div>
+
         <div class="mt-5 lg:mt-1 lg:ml-6">
           <p class="uppercase tracking-wide text-lg text-cyan-900 font-bold">Hi, my name is <%= @listing.user.first_name%></p>
         </div>
@@ -24,12 +15,6 @@
         </div>
         <div>
           <p class="block mt-4 text-lg leading-relaxed font-normal text-gray-900"> Fee: ¥ <%= @listing.fee %>0 </p>
-        </div>
-        <br>
-        <div>
-          <p class="inline-block text-lg px-6 py-4 shadow-2xl leading-none border rounded text-pink-600 border-pink-600 hover:text-white hover:bg-pink-600 mt-4 md:mt-0" >
-            <%= link_to "Rent Me!", new_listing_booking_path(@listing) %>
-          </p>
         </div>
       </div>
     </div>
