@@ -46,7 +46,7 @@ class ListingsController < ApplicationController
   def destroy
     @listing = Listing.find(params[:id])
     @listing.destroy
-    redirect_to listings_url, notice: 'Listing was successfully destroyed.'
+    redirect_to profile_path, notice: 'Listing was successfully destroyed.'
   end
 
   private
