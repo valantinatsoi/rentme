@@ -1,3 +1,15 @@
-        <div>
-          <p><%= link_to "Confirm Booking", profile_path, class: "inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-blue-500 hover:bg-white mt-4 md:mt-0" %></p>
-        </div>
+<div class="container py-5">
+  <div class="row">
+    <div class="col-12 col-md-6 offset-lg-3">
+      <div class="bg-white rounded p-3 shadow">
+        <h3>Book <strong><%= @listing.user.first_name %></strong> for a <strong> <%= (@listing.category.name).capitalize %> Listing</strong></h3>
+        <p>Once you've submitted the booking, we will notify <%= @listing.user.first_name %>. You will receive a notification once the booking is confirmed!</p>
+        <p>Total amount: <%= @listing.fee %> RMB </p>
+        <%= simple_form_for [ @listing, @booking ] do |f| %>
+          <%= f.input :requirements, placeholder: 'Please write any requirements for have for this booking' %>
+          <%= f.submit class: 'btn btn-flat' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

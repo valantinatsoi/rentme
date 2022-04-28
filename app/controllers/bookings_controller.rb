@@ -1,15 +1,16 @@
 class BookingsController < ApplicationController
-  before_action :set_booking, only: [:edit, :update]
+  before_action :set_booking, only: [:edit, :update, :destroy]
 
   def new
-    # @listing = Listing.find(params[:id])
+    @listing = Listing.find(params[:listing_id])
     @booking = Booking.new
   end
 
   def create
+    @listing = Listing.find(params[:listing_id])
     @booking = Booking.new(booking_params)
-    @listing = Listing.find(params[:id])
     @booking.listing = @listing
+    @booking.user = current_user
 
     if @booking.save
       redirect_to profile_path
@@ -30,7 +31,6 @@ class BookingsController < ApplicationController
   end
 
   def destroy
-    @booking = Booking.find(params[:id])
     @booking.destroy
     redirect_to profile_path
   end
