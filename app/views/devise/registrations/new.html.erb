@@ -1,28 +1,4 @@
-<!-- NAVBAR COMPONENT -->
-    <nav class="flex items-center justify-between flex-wrap bg-pink-600 p-2 rounded">
-      <div class="flex items-center flex-shrink-3 text-white mr-6">
-        <span class="font-bold text-xl">RentMe</span>
-      </div>
-        <div class="flex-col justify-end">
-          <div class="w-full block flex-grow sm:flex sm:items-center sm:w-auto">
-            <div class="hidden sm:flex items-center justify-between space-x-2">
-              <div>
-                <p class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-pink-600
-                hover:bg-white mt-4 md:mt-1"><%= link_to "Sign Up", new_user_registration_path %>
-                </p>
-              </div>
-              <div>
-                <p class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-pink-600
-                hover:bg-white mt-4 md:mt-1"><%= link_to "Login", new_user_session_path %>
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-    </nav>
-
-<!-- END OF NAVBAR -->
-<h1 class="text-bold text-cyan-900 text-2xl text-center py-10 justify-items-center">Sign up</h1>
+<h1 class="text-bold text-cyan-900 text-4xl text-center py-10 justify-items-center"><strong>Sign up</strong></h1>
 <div class="mt-6 flex justify-center">
   <div class="w-1/2 xl:w-1/2"
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
