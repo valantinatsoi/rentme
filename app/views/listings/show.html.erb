@@ -5,6 +5,11 @@
       <img class="rounded-lg lg:w-64 shadow-2xl" src="<%= @listing.user.avatar %>"/>
     </div>
       <div class="p-5">
+        <div>
+          <p class="inline-block text-lg px-6 py-4 shadow-2xl leading-none border rounded text-pink-600 border-pink-600 hover:text-white hover:bg-pink-600 mt-4 md:mt-0" >
+            <%= link_to "Edit", edit_listing_path(@listing) %>
+          </p>
+        </div>
         <div class="mt-5 lg:mt-1 lg:ml-6">
           <p class="uppercase tracking-wide text-lg text-cyan-900 font-bold">Hi, my name is <%= @listing.user.first_name%></p>
         </div>
