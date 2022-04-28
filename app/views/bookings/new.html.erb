@@ -1,15 +1,27 @@
-<div class="container py-5">
-  <div class="row">
-    <div class="col-12 col-md-6 offset-lg-3">
+<h1 class="text-bold text-cyan-900 text-2xl text-center py-10 justify-items-center"><strong>Hooray! You're about to make a booking!</strong></h1>
+<div class="mt-6 flex justify-center">
+  <div class="w-1/2 xl:w-1/2"
       <div class="bg-white rounded p-3 shadow">
-        <h3>Book <strong><%= @listing.user.first_name %></strong> for a <strong> <%= (@listing.category.name).capitalize %> Listing</strong></h3>
-        <p>Once you've submitted the booking, we will notify <%= @listing.user.first_name %>. You will receive a notification once the booking is confirmed!</p>
-        <p>Total amount: <%= @listing.fee %> RMB </p>
+        <h3 class="text-cyan-900 text-bold text-2xl">Book <strong><%= @listing.user.first_name %></strong> for a <strong> <%= (@listing.category.name).capitalize %> Listing</strong></h3>
+        <br>
+        <p class="leading-loose tracking-wider">Once you've submitted the booking, we will notify <%= @listing.user.first_name %>. You will receive a notification once the booking is confirmed!</p>
+        <br>
+        <p class="text-bold text-xl">Total amount: <strong>¥ <%= @listing.fee %>0</strong></p>
         <%= simple_form_for [ @listing, @booking ] do |f| %>
-          <%= f.input :requirements, placeholder: 'Please write any requirements for have for this booking' %>
+        <br>
+          <%= f.input :requirements, label: false,
+                      input_html: { autocomplete: "First Name", class: "mt-1 mb-4 block w-full rounded-md bg-gray-100
+                      border-transparent focus:border-gray-500 focus:bg-white
+                      focus:ring-0" }%>
+        <br>
+          <p class="inline-block justify-center text-lg mt:mb2 px-6 py-4 shadow-2xl leading-none border rounded text-pink-600 border-pink-600 hover:text-white hover:bg-pink-600 mt-4 md:mt-0" >
           <%= f.submit class: 'btn btn-flat' %>
+          </p>
         <% end %>
       </div>
+      <br>
     </div>
   </div>
 </div>
+<br>
+<br>
