@@ -2,7 +2,7 @@ class BookingsController < ApplicationController
   before_action :set_booking, only: [:edit, :update]
 
   def new
-    @listing = Listing.find(params[:id])
+    # @listing = Listing.find(params[:id])
     @booking = Booking.new
   end
 
