@@ -7,7 +7,9 @@
       <div class="p-5">
         <div>
           <p class="inline-block text-lg px-6 py-4 shadow-2xl leading-none border rounded text-pink-600 border-pink-600 hover:text-white hover:bg-pink-600 mt-4 md:mt-0" >
-            <%= link_to "Edit", edit_listing_path(@listing) %>
+            <% if policy(@listing).edit? %>
+              <%= link_to "Edit", edit_listing_path(@listing) %>
+            <% end %>
           </p>
         </div>
         <div>
@@ -28,7 +30,9 @@
         <br>
         <div>
           <p class="inline-block text-lg px-6 py-4 shadow-2xl leading-none border rounded text-pink-600 border-pink-600 hover:text-white hover:bg-pink-600 mt-4 md:mt-0" >
-            <%= link_to "Rent Me!", new_listing_booking_path(@listing) %>
+            <% if policy(Listing).create? %>
+              <%= link_to "Rent Me!", new_listing_booking_path(@listing) %>
+            <% end %>
           </p>
         </div>
       </div>
