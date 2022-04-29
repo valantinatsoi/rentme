@@ -37,6 +37,9 @@
         <div>
           <p class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-hotpink hover:bg-white mt-4 md:mt-1"><%= link_to "My Profile", profile_path%></p>
         </div>
+        <div>
+          <p><%= link_to "Log Out", destroy_user_session_path, :method => :delete, class: "inline-block text-sm px-4 py-2 leading-none border rounded text-pink-600 bg-white hover:border-white hover:text-white hover:bg-hotpink mt-4 md:mt-1"%></p>
+        </div>
       </div>
     </div>
   </div>
