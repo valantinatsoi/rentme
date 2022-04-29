@@ -1,8 +1,8 @@
-<h1 class="text-bold text-cyan-900 text-2xl text-center py-10 justify-items-center"><strong>Hooray! You're about to make a booking!</strong></h1>
+<h1 class="text-bold text-headings text-2xl text-center py-10 justify-items-center"><strong>Hooray! You're about to make a booking!</strong></h1>
 <div class="mt-6 flex justify-center">
   <div class="w-1/2 xl:w-1/2"
       <div class="bg-white rounded p-3 shadow">
-        <h3 class="text-cyan-900 text-bold text-2xl">Book <strong><%= @listing.user.first_name %></strong> for a <strong> <%= (@listing.category.name).capitalize %> Listing</strong></h3>
+        <h3 class="text-headings text-bold text-2xl">Book <strong><%= @listing.user.first_name %></strong> for a <strong> <%= (@listing.category.name).capitalize %> Listing</strong></h3>
         <br>
         <p class="leading-loose tracking-wider">Once you've submitted the booking, we will notify <%= @listing.user.first_name %>. You will receive a notification once the booking is confirmed!</p>
         <br>
@@ -14,7 +14,7 @@
                       border-transparent focus:border-gray-500 focus:bg-white
                       focus:ring-0" }%>
         <br>
-          <p class="inline-block justify-center text-lg mt:mb2 px-6 py-4 shadow-2xl leading-none border rounded text-pink-600 border-pink-600 hover:text-white hover:bg-pink-600 mt-4 md:mt-0" >
+          <p class="inline-block justify-center text-lg mt:mb2 px-6 py-4 shadow-2xl leading-none border rounded text-hotpink border-hotpink hover:text-white hover:bg-hotpink mt-4 md:mt-0" >
           <%= f.submit class: 'btn btn-flat' %>
           </p>
         <% end %>
