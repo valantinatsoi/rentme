@@ -1,32 +1,29 @@
-<h1 class="text-bold text-cyan-900 text-4xl text-center py-10 justify-items-center"><strong>Log-in</strong></h1>
+<h1 class="text-bold text-headings text-4xl text-center py-10 justify-items-center">Log-in</h1>
 <div class="mt-6 flex justify-center">
-  <div class="w-1/2 xl:w-1/2"
+  <div class="w-1/2 xl:w-1/2">
 
     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="form-inputs">
-        <span class="text-cyan-900 text-bold">Email</span>
+        <span class="text-headings text-bold">Email</span>
         <%= f.input :email,
                     required: false,
                     autofocus: true,
                     label: false,
                     input_html: { autocomplete: "email", class: "mt-1 mb-4 block w-full rounded-md bg-gray-100
-                      border-transparent focus:border-gray-500 focus:bg-white
+                      border-transparent focus:border-headings focus:bg-white
                       focus:ring-0" } %>
-        <span class="text-cyan-900 text-bold">Password</span>
+        <span class="text-headings text-bold">Password</span>
         <%= f.input :password,
                     required: false,
                     label:false,
                     input_html: { autocomplete: "current-password", class: "mt-1 mb-4 block w-full rounded-md bg-gray-100
-                      border-transparent focus:border-gray-500 focus:bg-white
+                      border-transparent focus:border-headings focus:bg-white
                       focus:ring-0" } %>
       </div>
-      <br>
-          <div class="form-actions">
-              <p class="inline-block text-lg mt:mb2 px-6 py-4 shadow-2xl leading-none border rounded text-pink-600 border-pink-600 hover:text-white hover:bg-pink-600 mt-4 md:mt-0" >
-                <%= f.button :submit, "Log-in" %></p>
+      <div>
+      <%= f.submit "Log-in", class:"inline-block text-lg mt:mb2 px-6 py-4 shadow-2xl leading-none border rounded text-hotpink border-hotpink hover:text-white hover:bg-hotpink mt-4 md:mt-0" %>
+      </div>
     <% end %>
-  </div>
-  <br><br>
+    <br>
 </div>
-<br>
-<br>
+</div>
