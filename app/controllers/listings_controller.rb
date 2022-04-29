@@ -6,12 +6,14 @@ class ListingsController < ApplicationController
   # GET /listings/1
   def show
     @listing = Listing.find(params[:id])
+    authorize @listing
   end
 
   # GET /listings/new
   def new
     @category = Category.find(params[:category_id])
     @listing = Listing.new
+    authorize @listing
   end
 
   # POST /listings
@@ -20,6 +22,7 @@ class ListingsController < ApplicationController
     @listing = Listing.new(listing_params)
     @listing.category = @category
     @listing.user = current_user
+    authorize @listing
 
     if @listing.save
       redirect_to profile_path, notice: 'Listing was successfully created.'
@@ -30,11 +33,13 @@ class ListingsController < ApplicationController
 
   def edit
     @listing = Listing.find(params[:id])
+    authorize @listing
   end
 
   # PATCH/PUT /listings/1
   def update
     @listing = Listing.find(params[:id])
+    authorize @listing
     if @listing.update(listing_params)
       redirect_to @listing, notice: 'Listing was successfully updated.'
     else
