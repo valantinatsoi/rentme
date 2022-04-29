@@ -1,10 +1,11 @@
 class CategoriesController < ApplicationController
   def index
-    @categories = Category.all
+    @categories = policy_scope(Category)
   end
 
   def show
     @category = Category.find(params[:id])
+    authorize @category
     @listings = Listing.where(category: @category)
   end
 
