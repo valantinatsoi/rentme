@@ -7,4 +7,9 @@ class User < ApplicationRecord
   validates :first_name, :last_name, presence: true
   has_many :bookings, dependent: :destroy
   has_many :listings, dependent: :destroy
+  # this is the reviews that this user writes about a booking
+  has_many :reviews, through: :bookings
+
+  has_many :received_bookings, through: :listings, source: :bookings
+  has_many :received_reviews, through: :received_bookings, source: :reviews
 end

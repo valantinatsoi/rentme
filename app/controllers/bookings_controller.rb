@@ -4,6 +4,7 @@ class BookingsController < ApplicationController
   def new
     @listing = Listing.find(params[:listing_id])
     @booking = Booking.new
+    authorize @booking
   end
 
   def create
@@ -11,6 +12,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.listing = @listing
     @booking.user = current_user
+    authorize @booking
 
     if @booking.save
       redirect_to profile_path
@@ -24,6 +26,7 @@ class BookingsController < ApplicationController
 
   def update
     if @booking.update(booking_params)
+      authorize @booking
       redirect_to profile_path, notice: "Booking was succesfully updated"
     else
       render :edit
@@ -32,6 +35,7 @@ class BookingsController < ApplicationController
 
   def destroy
     @booking.destroy
+    authorize @booking
     redirect_to profile_path
   end
 

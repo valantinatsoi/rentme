@@ -9,8 +9,9 @@
         <p class="text-bold text-xl">Total amount: <strong>¥ <%= @listing.fee %>0</strong></p>
         <%= simple_form_for [ @listing, @booking ] do |f| %>
         <br>
+        <h2 class ="text-headings text-normal text-xl">Requirement</h2>
           <%= f.input :requirements, label: false,
-                      input_html: { autocomplete: "First Name", class: "mt-1 mb-4 block w-full rounded-md bg-gray-100
+                      input_html: { class: "mt-1 mb-4 block w-full rounded-md bg-gray-100
                       border-transparent focus:border-gray-500 focus:bg-white
                       focus:ring-0" }%>
         <br>

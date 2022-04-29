@@ -3,7 +3,6 @@
 
 <div class="grid lg:grid-cols-3 lg:flex md:flex justify-center">
   <% @listings.each do |listing| %>
-    <%= link_to listing_path(listing) do %>
       <div class="relative p-8 text-center border border-transparent rounded-lg w-96 m-5 justify-between shadow-lg shadow-pink-200">
           <img
             class="object-cover w-full h-96 px-auto rounded shadow-2xl"
@@ -20,11 +19,7 @@
             </p>
             <br>
             <p class="block mt-1 text-lg leading-tight font-semibold text-gray-900">Fee: ¥<%= listing.fee %> </p>
-            <br>
-            <p class="inline-block text-sm px-4 py-2 leading-none bg-hotpink rounded text-white border-pink-600 border hover:border-hotpink hover:text-hotpink hover:bg-white rounded-full items-end"><%= link_to "Edit", edit_listing_path(listing) %></p>
       </div>
-
-    <% end %>
   <% end %>
 </div>
 <br>
