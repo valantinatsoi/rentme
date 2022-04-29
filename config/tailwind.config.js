@@ -9,7 +9,11 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Quicksand', ...defaultTheme.fontFamily.sans],
+        sans: ['Poppins', ...defaultTheme.fontFamily.sans],
+      },
+      colors: {
+        'hotpink': '#FF008E',
+        'headings': '#0C1E7F'
       },
     },
   },
