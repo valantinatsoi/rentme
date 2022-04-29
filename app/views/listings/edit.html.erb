@@ -1,15 +1,27 @@
-<div class="container py-5">
-  <div class="row">
-    <div class="col-12 col-md-6 offset-lg-3">
-      <div class="bg-white rounded p-3 shadow">
-        <h3>Edit your listing</h3>
+<h1 class="text-bold text-headings text-2xl text-center py-10 justify-items-center"><strong>Need to make some changes to your listing?</strong></h1>
+<div class="mt-6 flex justify-center">
+  <div class="w-1/2 xl:w-1/2">
+        <br>
         <%= simple_form_for [ @category, @listing ] do |f| %>
-          <%= f.input :slogan, placeholder: 'Your slogan' %>
-          <%= f.input :description, placeholder: 'Description of what you\'re offering' %>
-          <%= f.input :fee, placeholder: '500rmb' %>
-          <%= f.submit class: 'btn btn-flat' %>
+          <span class="text-headings text-bold text-xl">Slogan</span>
+          <%= f.input :slogan, label: false, placeholder: 'What is your slogan?',
+                      input_html: { class: "mt-1 mb-4 block w-full rounded-md bg-gray-100
+                      border-transparent focus:border-headings focus:bg-white
+                      focus:ring-0" } %>
+
+          <span class="text-headings text-bold text-xl">Description</span>
+          <%= f.input :description, label: false, placeholder: 'What are you offering?',
+                      input_html: { class: "mt-1 mb-4 block w-full rounded-md bg-gray-100
+                      border-transparent focus:border-headings focus:bg-white
+                      focus:ring-0" } %>
+
+          <span class="text-headings text-bold text-xl">Fee</span>
+          <%= f.input :fee, label: false, placeholder: 'Put a price tag on yourself ',
+                      input_html: { autocomplete: "Fee", class: "mt-1 mb-4 block w-full rounded-md bg-gray-100
+                      border-transparent focus:border-headings focus:bg-white focus:ring-0"} %>
+          <br>
+          <%= f.submit class:"inline-block justify-center text-lg mt:mb2 px-6 py-4 shadow-2xl leading-none border rounded text-hotpink border-hotpink hover:text-white hover:bg-hotpink mt-4 md:mt-0" %>
         <% end %>
-      </div>
     </div>
   </div>
-</div>
+  <br><br>

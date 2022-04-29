@@ -1,6 +1,9 @@
 class ListingsController < ApplicationController
   def index
-    @listings = policy_scope(Listing).order(created_at: :desc)
+
+    @listings = policy_scope(Listing).where(user_id: params[:user_id]).order(created_at: :desc)
+    # @listings = Listing
+
   end
 
   # GET /listings/1

@@ -11,9 +11,39 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;700&display=swap" rel="stylesheet">
   </head>
 
 
+<header class="shadow-sm bg-hotpink">
+  <div class="max-w-screen-xl p-4 mx-auto ">
+    <div class="flex items-center justify-between space-x-4 lg:space-x-10">
+      <div class="flex lg:w-0 lg:flex-1">
+        <span class="text-5xl text-white"><%= link_to "RentMe", root_path %></span>
+      </div>
+
+      <div class="sm:flex items-center justify-between space-x-2">
+        <div>
+          <p class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-hotpink
+                hover:bg-white mt-4 md:mt-1"><%= link_to "Sign Up", new_user_registration_path %>
+          </p>
+        </div>
+        <div>
+          <p class="inline-block text-sm px-4 py-2 leading-none border rounded text-pink-600 bg-white hover:border-white hover:text-white hover:bg-hotpink mt-4 md:mt-1"><%= link_to "Login", new_user_session_path %>
+          </p>
+        </div>
+        <div>
+          <p class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-hotpink hover:bg-white mt-4 md:mt-1"><%= link_to "My Profile", profile_path%></p>
+        </div>
+        <div>
+          <p><%= link_to "Log Out", destroy_user_session_path, :method => :delete, class: "inline-block text-sm px-4 py-2 leading-none border rounded text-pink-600 bg-white hover:border-white hover:text-white hover:bg-hotpink mt-4 md:mt-1"%></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
 
   <body>
     <main>
@@ -21,9 +51,9 @@
     </main>
   </body>
 
-  <footer class="bg-pink-600 text-center lg:text-left inset-x-0 bottom-0">
-        <div class="text-white text-center p-4">
-          © 2022 Copyright: RentMe
+  <footer class="bg-hotpink lg:text-left inset-x-0 bottom-0">
+        <div class=" text-white text-center p-4 ">
+          <%= link_to "© 2022 Copyright: RentMe", root_path %>
         </div>
   </footer>
 </html>
