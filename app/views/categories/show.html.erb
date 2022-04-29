@@ -17,7 +17,7 @@
   </div>
 </section>
 
-<div class="grid lg:grid-cols-3 lg:flex md:flex justify-center">
+<div class="grid lg:grid-cols-3 lg:flex md:flex justify-center flex-wrap">
   <% @listings.each do |listing| %>
     <%= link_to listing_path(listing) do %>
       <div class="relative p-8 text-center border border-transparent rounded-lg w-96 m-5 justify-between shadow-lg shadow-pink-200">
