@@ -1,4 +1,5 @@
 class ListingsController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
   def index
 
     @listings = policy_scope(Listing).where(user_id: params[:user_id]).order(created_at: :desc)
